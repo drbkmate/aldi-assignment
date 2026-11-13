@@ -1,0 +1,23 @@
+{
+  "name": "qa-engineer-homework",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright tests for the QA Engineer homework assignment",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:frontend": "playwright test --project=frontend",
+    "test:api": "playwright test --project=api",
+    "test:headed": "playwright test --project=frontend --headed",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0",
+    "@types/node": "22.20.5",
+    "dotenv": "18.0.10",
+    "typescript": "5.9.3"
+  }
+}

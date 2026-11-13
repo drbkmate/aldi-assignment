@@ -1,0 +1,16 @@
+name: Playwright Tests
+
+on: push
+
+jobs:
+  frontend-tests:
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.65.0-noble
+    env:
+      CONDUIT_USER_EMAIL: ${{ secrets.CONDUIT_USER_EMAIL }}
+      CONDUIT_USER_PASSWORD: ${{ secrets.CONDUIT_USER_PASSWORD }}
+      CONDUIT_USERNAME: ${{ secrets.CONDUIT_USERNAME }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm run test:frontend
